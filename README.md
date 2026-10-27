@@ -1,15 +1,39 @@
-# SigmaOS-live-session
+    # SigmaOS-live-session
 
-Part of the SigmaOS multi-repository architecture.
+    Live-session bootstrap for the try-before-install ISO
 
-## Principles
-- MODULARITY: Single responsibility per repository
-- LOOSE COUPLING: Minimal dependencies between repos
-- INTERFACE SEGREGATION: Clear, focused public APIs
-- DETERMINISTIC TESTING: Comprehensive test coverage
+    Part of the **SigmaOS** sovereign operating-system ecosystem — a multi-repository
+    distribution modelled on Linux Mint and Omarchy Linux. See the parent
+    [`SigmaOS`](https://github.com/AaryanSinghChauhan09/SigmaOS) repository for the
+    full component index.
 
-## License
-SPDX-License-Identifier: GPL-3.0-or-later
+    ## Upstream inspirations
+    - https://github.com/linuxmint/mint-live-session
 
-## Copyright
-Copyright (C) 2026 SigmaOS Project
+    ## Design principles applied
+    - **Fail-Fast**
+- **Pure Plan / Thin Execute**
+- **Deterministic Testing**
+- **KISS**
+- **Information Hiding**
+
+    ## Usage
+    Verbs: `start, stop, save, restore, list`
+
+    ```
+    $ sigma-session --store ./sessions start browse --app firefox --app terminal
+$ sigma-session --store ./sessions save browse-01
+$ sigma-session --store ./sessions stop browse-01
+$ sigma-session --store ./sessions restore browse-01
+$ sigma-session --store ./sessions list
+
+    ```
+
+    ## Build & test
+    ```
+    make build
+    make test
+    ```
+
+    ## Licence
+    GNU General Public License v3.0 (FOSS).
