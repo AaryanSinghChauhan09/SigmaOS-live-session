@@ -1,12 +1,14 @@
 [package]
-name = "sigmaos-live_session"
+name = "sigmaos-live-session"
 version = "0.1.0"
 edition = "2021"
 authors = ["SigmaOS Project"]
-description = "SigmaOS live_session"
+description = "Live session support"
 license = "GPL-3.0-or-later"
-repository = "https://github.com/AaryanSinghChauhan09/SigmaOS-live_session"
+repository = "https://github.com/AaryanSinghChauhan09/SigmaOS-live-session"
 readme = "README.md"
+keywords = ["live", "session", "iso"]
+categories = ["os"]
 
 [dependencies]
 sigmaos-kernel = { version = "0.1", path = "../SigmaOS-kernel" }
