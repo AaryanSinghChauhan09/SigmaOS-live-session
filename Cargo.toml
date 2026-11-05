@@ -1,17 +1,9 @@
 [package]
-name = "sigmaos-live-session"
+name = "sigmaos_live_session"
 version = "0.1.0"
 edition = "2021"
-authors = ["SigmaOS Project"]
-description = "Live session support"
-license = "GPL-3.0-or-later"
-repository = "https://github.com/AaryanSinghChauhan09/SigmaOS-live-session"
-readme = "README.md"
-keywords = ["live", "session", "iso"]
-categories = ["os"]
+description = "Live USB bootloader environment, squashfs rootfs mounter, and encrypted persistence overlay builder"
 
-[dependencies]
-sigmaos-kernel-component = { version = "0.1", path = "../SigmaOS-kernel" }
-
-[profile.release]
-opt-level = 3
+[lib]
+name = "sigmaos_live_session"
+path = "src/lib.rs"

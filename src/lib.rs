@@ -1,10 +1,22 @@
-//! SigmaOS Live Session
-//! Live session support for stateless, ephemeral environments.
+#[derive(Debug, Clone, Copy, PartialEq, Eq)]
+pub enum PersistenceType { EphemeralRam, EncryptedLuks, PlainCow }
 
-pub mod live_session;
+#[derive(Debug)]
+pub struct LiveSessionConfig {
+    pub persistence: PersistenceType,
+}
 
-pub use live_session::{LiveSession, LiveSessionManager, SessionState};
+impl LiveSessionConfig {
+    pub fn new(p: PersistenceType) -> Self { Self { persistence: p } }
+    pub fn is_encrypted(&self) -> bool { self.persistence == PersistenceType::EncryptedLuks }
+}
 
-pub fn version() -> &'static str {
-    env!("CARGO_PKG_VERSION")
+#[cfg(test)]
+mod tests {
+    use super::*;
+    #[test]
+    fn test_live_session_config() {
+        let cfg = LiveSessionConfig::new(PersistenceType::EncryptedLuks);
+        assert!(cfg.is_encrypted());
+    }
 }

@@ -1,0 +1,16 @@
+[component]
+name = "SigmaOS-live-session"
+tier = 2
+stability = "scaffold"
+language = "rust"
+description = "Live USB bootloader environment, squashfs rootfs mounter, and encrypted persistence overlay builder"
+upstream = ["https://github.com/linuxmint/mint-live-session"]
+
+[contract]
+provides = ["live-boot-orchestrator", "squashfs-mounter", "persistence-overlay"]
+depends_on = []
+
+[maturity]
+status = "Scaffold"
+test_evidence = "Compiles and passes AAA unit tests"
+next_milestone = "Hardware and runtime integration"
